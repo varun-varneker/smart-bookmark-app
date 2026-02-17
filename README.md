@@ -1,36 +1,43 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚀 Smart Bookmark
 
-## Getting Started
+Smart Bookmark is a real-time bookmark management web application built with Next.js and Supabase. It enhances traditional bookmarking with metadata extraction, rich preview cards, and instant multi-tab synchronization.
 
-First, run the development server:
+## ✨ Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- 🔐 **Google OAuth authentication**
+- ⚡ **Real-time sync across tabs and devices**
+- 🌐 **Server-side metadata scraping** (title, description, preview image)
+- 🖼 **Rich preview cards**
+- 🔎 **Search functionality**
+- 🔄 **Optimistic UI updates**
+- 🛡 **Row Level Security (RLS)** for user data protection
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🛠 Tech Stack
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Next.js** (App Router)
+- **Supabase** (Auth + Postgres + Realtime)
+- **TailwindCSS**
+- **Cheerio** (metadata parsing)
+- **BroadcastChannel API**
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## ⚙️ Architecture Highlights
 
-## Learn More
+**Hybrid real-time model:**
+- Supabase Realtime for cross-device updates
+- BroadcastChannel for instant multi-tab sync
+- Custom `useBookmarks` hook for clean state management
+- Server-side metadata API to bypass CORS limitations
 
-To learn more about Next.js, take a look at the following resources:
+## 🧩 Key Challenges
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- 🔐 Configuring Google OAuth correctly (redirect_uri_mismatch, invalid_client errors)
+- ⚡ Achieving seamless multi-tab synchronization without refresh
+- 🌐 Handling CORS issues during metadata scraping
+- 🧠 Managing optimistic UI updates without race conditions
+- 🛡 Implementing secure Row Level Security policies in Supabase
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## 🙏 Thank You
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Thank you for checking out Smart Bookmark! This project was built with passion and attention to detail. If you found it useful or interesting, feel free to star the repository and share your feedback. Happy bookmarking! ⭐
